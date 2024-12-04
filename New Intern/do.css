@@ -1,0 +1,129 @@
+/* styles.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  color: #517A06;
+  background: url('bg2.png') center center / cover no-repeat; /* Updated to use the uploaded image */
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px; /* Reduced padding for better fit */
+  background-color: white; /* Solid white for contrast */
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky; /* Keep navigation fixed at top */
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 26px; /* Slightly smaller font size */
+  font-weight: bold;
+  color: #517A06; /* Green text for the logo */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Reduced gap for better fit */
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 14px; /* Slightly smaller font size for links */
+  font-weight: bold;
+  color: #517A06; /* Green links */
+  padding: 8px 15px; /* Adjusted padding */
+  border: 2px solid #517A06; /* Green border */
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #517A06;
+  color: white;
+}
+
+.dashboard {
+  background-color: #517A06; /* Solid green background */
+  color: white;
+}
+
+/* Global Styles */
+.background {
+  height: calc(100% - 60px); /* Adjust height to account for header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Donor Card Styles */
+.donor-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 90%; /* Use percentage for better responsiveness */
+  width: 400px; /* Set a max width for larger screens */
+}
+
+.donor-card h1 {
+  font-size: 1.8rem; /* Adjusted font size */
+  color: #517A06;
+  margin-bottom: 1rem;
+}
+
+.donor-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #517A06;
+  margin-bottom: 1.5rem;
+}
+
+.donate-btn {
+  background-color: #517A06;
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donate-btn:hover {
+  background-color: #4a6e05; /* Slightly darker green on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stack header elements on smaller screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .nav {
+    flex-direction: column; /* Stack navigation links */
+    gap: 10px; /* Adjusted gap */
+  }
+
+  .donor-card {
+    padding: 1.5rem;
+    width: 90%; /* Full width on smaller screens */
+  }
+
+  .donor-card h1 {
+    font-size: 1.5rem; /* Adjusted font size for smaller screens */
+  }
+
+  .donor-card p {
+    font-size: 0.95rem; /* Adjusted font size for smaller screens */
+  }
+}

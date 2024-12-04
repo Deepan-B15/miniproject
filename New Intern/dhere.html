@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Food Donation Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body background="bg.jpg">
+    <div class="container mx-auto p-6">
+        <!-- Form Section -->
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto sm:max-w-md md:max-w-xl lg:max-w-2xl" id="formContainer">
+            <h1 class="text-2xl md:text-3xl font-bold mb-6 text-center">Food Donation Form</h1>
+            <form id="donationForm">
+                <!-- Full Name -->
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                </div>
+                <!-- Phone Number -->
+                <div class="mb-4">
+                    <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                </div>
+                <!-- Address -->
+                <div class="mb-4">
+                    <label for="address" class="block text-gray-700 font-medium mb-2">Address</label>
+                    <input 
+                        type="text" 
+                        id="address" 
+                        name="address" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                </div>
+                <!-- Food Type -->
+                <div class="mb-4">
+                    <label for="food-type" class="block text-gray-700 font-medium mb-2">Type of Food</label>
+                    <input 
+                        type="text" 
+                        id="food-type" 
+                        name="food-type" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                </div>
+                <!-- Quantity -->
+                <div class="mb-4">
+                    <label for="quantity" class="block text-gray-700 font-medium mb-2">Quantity</label>
+                    <input 
+                        type="number" 
+                        id="quantity" 
+                        name="quantity" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                </div>
+                <!-- Expiry Date -->
+                <div class="mb-4">
+                    <label for="expiry-date" class="block text-gray-700 font-medium mb-2">Expiry Date</label>
+                    <input 
+                        type="date" 
+                        id="expiry-date" 
+                        name="expiry-date" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                </div>
+                <!-- Comments -->
+                <div class="mb-4">
+                    <label for="comments" class="block text-gray-700 font-medium mb-2">Additional Comments</label>
+                    <textarea 
+                        id="comments" 
+                        name="comments" 
+                        rows="4" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+                <!-- Submit -->
+                <div class="text-center">
+                    <button 
+                        type="submit" 
+                        class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        Submit Donation
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- Submission Summary -->
+        <div class="bg-green-100 p-8 rounded-lg shadow-lg max-w-lg mx-auto sm:max-w-md md:max-w-xl lg:max-w-2xl hidden" id="summaryBox">
+        <h2 class="text-xl font-bold mb-4 text-center">Donation Submitted Successfully!</h2>
+        <p class="text-gray-700 mb-2"><strong>Full Name:</strong> <span id="summaryName"></span></p>
+        <p class="text-gray-700 mb-2"><strong>Phone:</strong> <span id="summaryPhone"></span></p>
+        <p class="text-gray-700 mb-2"><strong>Address:</strong> <span id="summaryAddress"></span></p>
+        <p class="text-gray-700 mb-2"><strong>Food Type:</strong> <span id="summaryFoodType"></span></p>
+        <p class="text-gray-700 mb-2"><strong>Quantity:</strong> <span id="summaryQuantity"></span></p>
+        <p class="text-gray-700 mb-2"><strong>Expiry Date:</strong> <span id="summaryExpiryDate"></span></p>
+        <p class="text-gray-700"><strong>Comments:</strong> <span id="summaryComments"></span></p>
+        <div class="text-center mt-4">
+            <button 
+                class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                onclick="location.reload()">Submit Another Donation</button>
+        </div>
+        <script>
+            const form = document.getElementById("donationForm");
+            const formContainer = document.getElementById("formContainer");
+            const summaryBox = document.getElementById("summaryBox");
+    
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+    
+                // Collect form values
+                document.getElementById("summaryName").innerText = document.getElementById("name").value;
+                document.getElementById("summaryPhone").innerText = document.getElementById("phone").value;
+                document.getElementById("summaryAddress").innerText = document.getElementById("address").value;
+                document.getElementById("summaryFoodType").innerText = document.getElementById("food-type").value;
+                document.getElementById("summaryQuantity").innerText = document.getElementById("quantity").value;
+                document.getElementById("summaryExpiryDate").innerText = document.getElementById("expiry-date").value;
+                document.getElementById("summaryComments").innerText = document.getElementById("comments").value || "No comments provided";
+    
+                // Hide form and show summary
+                formContainer.classList.add("hidden");
+                summaryBox.classList.remove("hidden");
+            }); 
+        </script>
+        
+        </div>
+    </div>
+
+    
+</body>
+</html>

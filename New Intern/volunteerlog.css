@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('bg.jpg') center center / cover no-repeat; /* Updated to use the uploaded image */
+    color: #517A06;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.login-section {
+    flex: 1;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+h2 {
+    font-size: 2rem;
+    color:  #517A06;
+}
+
+.social-icons a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #fff;
+    background: #888;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg,  #517A06, #517A06);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.options label {
+    cursor: pointer;
+}
+
+.options a {
+    color:  #517A06;
+    text-decoration: none;
+}
+
+.welcome-section {
+    flex: 1;
+    background: linear-gradient(135deg,  #517A06,  #517A06);
+    color: white;
+    padding: 60px;
+    text-align: center;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.signup-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    color:  #517A06;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .login-section, .welcome-section {
+        padding: 20px;
+    }
+}
